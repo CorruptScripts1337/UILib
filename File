@@ -57,7 +57,8 @@ local download = Instance.new("ScreenGui")
 download.Name = "Download"
 download.Enabled = true
 download.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-download.Parent = CoreGui
+download.Parent = game.Players.LocalPlayer.PlayerGui or game.Players.LocalPlayer:WaitForChild("PlayerGui")
+download.ResetOnSpawn = false
 
 local dMain = Instance.new("Frame")
 dMain.Name = "DMain"
@@ -169,11 +170,14 @@ local window = {}
 
 local CorruptScreenGui = Instance.new("ScreenGui")
 CorruptScreenGui.Name = "Corrupt"
-CorruptScreenGui.Parent = CoreGui
+CorruptScreenGui.Parent = game.Players.LocalPlayer.PlayerGui or game.Players.LocalPlayer:WaitForChild("PlayerGui")
+CorruptScreenGui.ResetOnSpawn = false
+
 
 local tooltipScreenGui = Instance.new("ScreenGui")
 tooltipScreenGui.Name = "Tooltips"
-tooltipScreenGui.Parent = CoreGui
+tooltipScreenGui.Parent = game.Players.LocalPlayer.PlayerGui or game.Players.LocalPlayer:WaitForChild("PlayerGui")
+tooltipScreenGui.ResetOnSpawn = false
 
 local function Tooltip(text)
 local tooltip = Instance.new("Frame")
